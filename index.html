@@ -18,21 +18,12 @@
         <ion-icon name="people"></ion-icon>
     </div>
 
-    <div class="container">
-        <div class="textBox boxStatus">
-            <p><span>(horario)</span> <strong>nome</strong> entra na sala...</p>
-        </div>
-        <div class="textBox boxMessage">
-            <p><span>(horario)</span> <strong>nome</strong> para <strong>nome:</strong> mensagem</p>
-        </div>
-        <div class="textBox boxPrivateMessage">
-            <p><span>(horario)</span> <strong>nome</strong> reservadamente para <strong>nome:</strong> mensagem</p>
-        </div>
-    </div>
+    <div class="container"></div>
 
     <div class="bottomBar bar">
-        <input type="text" placeholder="Escreva aqui...">
-        <ion-icon name="paper-plane-outline"></ion-icon>
+        <input type="text" id="myText" onfocus="this.value=''" placeholder="Escreva aqui...">
+        <button onclick="enviarMensagem()"><ion-icon name="paper-plane-outline" ></ion-icon></button>
+        
     </div>
  
     <script type="module" src="https://unpkg.com/ionicons@5.4.0/dist/ionicons/ionicons.esm.js"></script>
