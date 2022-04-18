@@ -62,13 +62,16 @@ function showMessages(resposta){
 
             }
         }
-        /*arrayMessages[i].scrollIntoView();*/
+        
     }
+    let elemento = document.querySelectorAll(".textBox");
+    let ultimo = elemento.length-1;
+    elemento = elemento[ultimo];
+    elemento.scrollIntoView();
 }
 
 function enviarMensagem (){
     let myMessage = document.getElementById("myText").value;
-    console.log(myMessage);
     let objMessage = {
         from: nome,
         to: 'Todos',
@@ -76,4 +79,23 @@ function enviarMensagem (){
         type: 'message' // ou "private_message" para o bônus
     }
     let reqMessage = axios.post('https://mock-api.driven.com.br/api/v6/uol/messages',objMessage);
+    reqMessage.then(sucessoEnvio);
+    reqMessage.catch(erroEnvio);
+
 }
+
+function sucessoEnvio(){
+    entrada();
+}
+
+function erroEnvio(){
+    myName();
+}
+
+let input = document.getElementById("myText");
+input.addEventListener("keyup", function(event) {
+  if (event.keyCode === 13) {
+   event.preventDefault();
+   document.getElementById("myBtn").click();
+  }
+});
