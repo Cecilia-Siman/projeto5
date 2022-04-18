@@ -1,10 +1,9 @@
 let nome="";
 let objNome = {};
 
-myName()
-
 function myName(){
-    nome = prompt("Seu nome?"); 
+    toggleElements();
+    nome = document.getElementById("meuNome").value;
     objNome = {
         name: nome
     }
@@ -13,7 +12,21 @@ function myName(){
     requisicao.catch(tratarErro);
 }
 
+function toggleElements(){
+    let hide1 = document.querySelector(".digiteNome");
+    hide1.classList.toggle("hide");
+    let hide2 = document.querySelector(".botaoNome");
+    hide2.classList.toggle("hide");
+
+    let show1 = document.querySelector(".entrando");
+    show1.classList.toggle("hide");
+    let show2 = document.querySelector(".loader");
+    show2.classList.toggle("hide");
+}
+
 function tratarSucesso(resposta){
+    let elemento = document.querySelector(".paginaInicial");
+    elemento.classList.add("hide");
     setInterval(manterConexão, 5000);
     entrada();
     setInterval(entrada, 3000);
@@ -22,7 +35,8 @@ function tratarSucesso(resposta){
 function tratarErro(erro){
     const statusCode = erro.response.status;
     if (statusCode === 400){
-        myName();
+        alert("Este nome já está em uso!");
+        toggleElements();
     }
 }
 

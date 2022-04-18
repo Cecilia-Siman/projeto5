@@ -9,26 +9,6 @@ p {
     font-size: 14px;
 }
 
-button {
-    background-color: white;
-    border: none;
-}
-
-input {
-    border: none;
-    padding: 10px;
-    width: 330px;
-}
-
-
-::placeholder {
-    font-family: 'Roboto', sans-serif;
-    font-style: italic;
-    font-weight: 400;
-    font-size: 18px;
-    color: #000000;
-}
-
 button:hover{
     cursor: pointer;
 }
@@ -83,6 +63,25 @@ span {
     color: black;
 }
 
+.bottomBar button {
+    background-color: white;
+    border: none;
+}
+
+.bottomBar input {
+    border: none;
+    padding: 10px;
+    width: 330px;
+}
+
+.bottomBar ::placeholder {
+    font-family: 'Roboto', sans-serif;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 18px;
+    color: #000000;
+}
+
 .container {
     height: 100%;
     width: 100%;
@@ -108,3 +107,133 @@ span {
 .boxPrivateMessage {
     background-color: #FFDEDE;
 }
+
+.paginaInicial {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: white;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.paginaInicial img{
+    width: 130px;
+    height: 92px;
+    position: fixed;
+    top: 72px;
+}
+
+.paginaInicial input {
+    width: 261px;
+    height: 54px;
+    position: absolute;
+    top: 258px;
+    border: 1px solid #D7D7D7;
+    box-sizing: border-box;
+    border-radius: 4px;
+    text-align: center;
+}
+.paginaInicial ::placeholder {
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    color: #AEAEAE;
+}
+
+.paginaInicial button {
+    width: 109px;
+    height: 45px;
+    position: absolute;
+    top: 327px;
+    background-color: #E7E7E7;
+    border: none;
+    border-radius: 9px;
+}
+
+
+.paginaInicial span {
+    font-size: 18px;
+    color:  #696969;
+}
+
+.paginaInicial p{
+    font-size: 24px;
+    position: fixed;
+    top: 400px;
+}
+
+.hide {
+    display: none;
+}
+
+.loader {
+    color: black;
+    font-size: 10px;
+    width: 1em;
+    height: 1em;
+    border-radius: 50%;
+    position: fixed;
+    top: 280px;
+    text-indent: -9999em;
+    animation: mulShdSpin 1.3s infinite linear;
+    transform: translateZ(0);
+  }
+  
+  @keyframes mulShdSpin {
+    0%,
+    100% {
+      box-shadow: 0 -3em 0 0.2em, 
+      2em -2em 0 0em, 3em 0 0 -1em, 
+      2em 2em 0 -1em, 0 3em 0 -1em, 
+      -2em 2em 0 -1em, -3em 0 0 -1em, 
+      -2em -2em 0 0;
+    }
+    12.5% {
+      box-shadow: 0 -3em 0 0, 2em -2em 0 0.2em, 
+      3em 0 0 0, 2em 2em 0 -1em, 0 3em 0 -1em, 
+      -2em 2em 0 -1em, -3em 0 0 -1em, 
+      -2em -2em 0 -1em;
+    }
+    25% {
+      box-shadow: 0 -3em 0 -0.5em, 
+      2em -2em 0 0, 3em 0 0 0.2em, 
+      2em 2em 0 0, 0 3em 0 -1em, 
+      -2em 2em 0 -1em, -3em 0 0 -1em, 
+      -2em -2em 0 -1em;
+    }
+    37.5% {
+      box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em,
+       3em 0em 0 0, 2em 2em 0 0.2em, 0 3em 0 0em, 
+       -2em 2em 0 -1em, -3em 0em 0 -1em, -2em -2em 0 -1em;
+    }
+    50% {
+      box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em,
+       3em 0 0 -1em, 2em 2em 0 0em, 0 3em 0 0.2em, 
+       -2em 2em 0 0, -3em 0em 0 -1em, -2em -2em 0 -1em;
+    }
+    62.5% {
+      box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em,
+       3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 0, 
+       -2em 2em 0 0.2em, -3em 0 0 0, -2em -2em 0 -1em;
+    }
+    75% {
+      box-shadow: 0em -3em 0 -1em, 2em -2em 0 -1em, 
+      3em 0em 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, 
+      -2em 2em 0 0, -3em 0em 0 0.2em, -2em -2em 0 0;
+    }
+    87.5% {
+      box-shadow: 0em -3em 0 0, 2em -2em 0 -1em, 
+      3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, 
+      -2em 2em 0 0, -3em 0em 0 0, -2em -2em 0 0.2em;
+    }
+  }
+
+
